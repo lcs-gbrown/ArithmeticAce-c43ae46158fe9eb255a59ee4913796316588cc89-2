@@ -42,66 +42,82 @@ struct ContentView: View {
             
             Divider()
             
-            HStack {
-                Image(systemName: "checkmark.circle")
-                    .foregroundColor(.green)
-                    //        CONDITION      true  false
-                    .opacity(answerCorrect ? 1.0 : 0.0)
+            ZStack {
+               
+                if answerCorrect {
+                    Image(systemName: "checkmark.circle")
+                        .foregroundColor(.green)
+                        .padding()
+                        .opacity(answerCorrect ? 1.0 : 0.0)
+                }
+                else {
+                    Image(systemName: "x.square")
+                        .foregroundColor(.red)
+                        .padding()
+                        .opacity(answerCorrect == false && answerChecked == true ? 1.0 : 0.0)
+                }
+            
                 Spacer()
                 TextField("",
                           text: $inputGiven)
                     .multilineTextAlignment(.trailing)
             }
             
-            Button(action: {
-                
-                // Answer has been checked!
-                answerChecked = true
-                
-                // Convert the input given to an integer, if possible
-                guard let productGiven = Int(inputGiven) else {
-                    // Sadness, not a number
-                    answerCorrect = false
-                    return
-                }
+            ZStack {
+                Button(action: {
+                    
+                    // Answer has been checked!
+                    answerChecked = true
+                    
+                    // Convert the input given to an integer, if possible
+                    guard let productGiven = Int(inputGiven) else {
+                        // Sadness, not a number
+                        answerCorrect = false
+                        return
+                    }
 
-                // Check the answer!
-                if productGiven == correctProduct {
-                    // Celebrate! 👍🏼
-                    answerCorrect = true
-                } else {
-                    // Sadness, they gave a number, but it's correct 😭
+                    // Check the answer!
+                    if productGiven == correctProduct {
+                        // Celebrate! 👍🏼
+                        answerCorrect = true
+                    } else {
+                        // Sadness, they gave a number, but it's correct 😭
+                        answerCorrect = false
+                    }
+                }, label: {
+                    Text("Check Answer")
+                        .font(.largeTitle)
+                })
+                    .padding()
+                    .buttonStyle(.bordered)
+                    .opacity(answerChecked == false ? 1.0 : 0.0)
+                
+                Button(action: {
+                    // Generate new numbers
+                    multiplicand = Int.random(in: 1...12)
+                    multiplier = Int.random(in: 1...12)
+                
+                    //Reset the properties that we use to keep track of
+                    //whether a question has been answered and whether the
+                    //answer is correct
+                    answerChecked = false
                     answerCorrect = false
-                }
-            }, label: {
-                Text("Check Answer")
-                    .font(.largeTitle)
-            })
-                .padding()
-                .buttonStyle(.bordered)
-            
-            Button(action: {
-                // Generate new numbers
-                multiplicand = Int.random(in: 1...12)
-                multiplier = Int.random(in: 1...12)
-            
-                //Reset the properties that we use to keep track of
-                //whether a question has been answered and whether the
-                //answer is correct
-                answerChecked = false
-                answerCorrect = false
+                    
+                    //Reset the field where the user gives an answer
+                    inputGiven = ""
                 
-                //Reset the field where the user gives an answer
-                inputGiven = ""
-            
-            }, label: {
+                }, label: {
+                    
+                    Text("New Question")
+                        .font(.largeTitle)
+                    
+                })
+                    .padding()
+                    .buttonStyle(.bordered)
                 
-                Text("New Question")
-                    .font(.largeTitle)
-                
-            })
-                .padding()
-                .buttonStyle(.bordered)
+                    .opacity(answerChecked == true ? 1.0 : 0.0)
+            }
+
             
             Spacer()
         }
