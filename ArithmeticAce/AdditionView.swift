@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  AdditionView.swift
 //  ArithmeticAce
 //
 //  Created by Russell Gordon on 2022-02-07.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AdditionView: View {
     
     // MARK: Stored properties
-    @State var multiplicand = Int.random(in: 1...12)
-    @State var multiplier = Int.random(in: 1...12)
+    @State var augend = Int.random(in: 1...12)
+    @State var addend = Int.random(in: 1...12)
     @State var inputGiven = ""
     
     // Has an answer been checked?
@@ -21,22 +21,22 @@ struct ContentView: View {
     @State var answerCorrect = false
     
     // MARK: Computed properties
-    // What is the correct product?
-    var correctProduct: Int {
-        return multiplicand * multiplier
+    // What is the correct sum?
+    var correctSum: Int {
+        return augend + addend
     }
     
     var body: some View {
                 
         VStack(spacing: 0) {
             HStack {
-                Text("✕")
+                Text("+")
                 
                 Spacer()
                 
                 VStack(alignment: .trailing) {
-                    Text("\(multiplicand)")
-                    Text("\(multiplier)")
+                    Text("\(augend)")
+                    Text("\(addend)")
                 }
             }
             
@@ -77,7 +77,7 @@ struct ContentView: View {
                     }
 
                     // Check the answer!
-                    if productGiven == correctProduct {
+                    if productGiven == correctSum {
                         // Celebrate! 👍🏼
                         answerCorrect = true
                     } else {
@@ -94,8 +94,8 @@ struct ContentView: View {
                 
                 Button(action: {
                     // Generate new numbers
-                    multiplicand = Int.random(in: 1...12)
-                    multiplier = Int.random(in: 1...12)
+                    augend = Int.random(in: 1...12)
+                    addend = Int.random(in: 1...12)
                 
                     //Reset the properties that we use to keep track of
                     //whether a question has been answered and whether the
@@ -128,8 +128,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct AdditionView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AdditionView()
     }
 }
