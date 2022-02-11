@@ -84,9 +84,19 @@ struct ContentView: View {
                 // Generate new numbers
                 multiplicand = Int.random(in: 1...12)
                 multiplier = Int.random(in: 1...12)
+            
+                //Reset the properties that we use to keep track of
+                //whether a question has been answered and whether the
+                //answer is correct
+                answerChecked = false
+                answerCorrect = false
+                
+                //Reset the field where the user gives an answer
+                inputGiven = ""
+            
             }, label: {
                 
-                Text("New QUestion")
+                Text("New Question")
                     .font(.largeTitle)
                 
             })
