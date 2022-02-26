@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A4211EB27CAA877001AE014 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4211EA27CAA877001AE014 /* Model.swift */; };
 		0AF3C5A827B6FAF800EFE64E /* AdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C5A727B6FAF800EFE64E /* AdditionView.swift */; };
 		0AF3C5AA27B6FC7500EFE64E /* SubtractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C5A927B6FC7500EFE64E /* SubtractionView.swift */; };
+		0AF3C5AC27B6FD9F00EFE64E /* DivisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C5AB27B6FD9F00EFE64E /* DivisionView.swift */; };
 		81FDA62C27B160FF002471AE /* ArithmeticAceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FDA62B27B160FF002471AE /* ArithmeticAceApp.swift */; };
 		81FDA62E27B160FF002471AE /* MultiplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FDA62D27B160FF002471AE /* MultiplicationView.swift */; };
 		81FDA63027B16100002471AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81FDA62F27B16100002471AE /* Assets.xcassets */; };
@@ -16,8 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A4211EA27CAA877001AE014 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		0AF3C5A727B6FAF800EFE64E /* AdditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionView.swift; sourceTree = "<group>"; };
 		0AF3C5A927B6FC7500EFE64E /* SubtractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtractionView.swift; sourceTree = "<group>"; };
+		0AF3C5AB27B6FD9F00EFE64E /* DivisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionView.swift; sourceTree = "<group>"; };
 		81FDA62827B160FF002471AE /* ArithmeticAce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArithmeticAce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FDA62B27B160FF002471AE /* ArithmeticAceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticAceApp.swift; sourceTree = "<group>"; };
 		81FDA62D27B160FF002471AE /* MultiplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationView.swift; sourceTree = "<group>"; };
@@ -36,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A4211E927CAA868001AE014 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0A4211EA27CAA877001AE014 /* Model.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		81FDA61F27B160FF002471AE = {
 			isa = PBXGroup;
 			children = (
@@ -55,12 +67,14 @@
 		81FDA62A27B160FF002471AE /* ArithmeticAce */ = {
 			isa = PBXGroup;
 			children = (
+				0A4211E927CAA868001AE014 /* Helpers */,
 				81FDA62B27B160FF002471AE /* ArithmeticAceApp.swift */,
 				81FDA62D27B160FF002471AE /* MultiplicationView.swift */,
 				81FDA62F27B16100002471AE /* Assets.xcassets */,
 				81FDA63127B16100002471AE /* Preview Content */,
 				0AF3C5A727B6FAF800EFE64E /* AdditionView.swift */,
 				0AF3C5A927B6FC7500EFE64E /* SubtractionView.swift */,
+				0AF3C5AB27B6FD9F00EFE64E /* DivisionView.swift */,
 			);
 			path = ArithmeticAce;
 			sourceTree = "<group>";
@@ -146,7 +160,9 @@
 				81FDA62E27B160FF002471AE /* MultiplicationView.swift in Sources */,
 				0AF3C5AA27B6FC7500EFE64E /* SubtractionView.swift in Sources */,
 				81FDA62C27B160FF002471AE /* ArithmeticAceApp.swift in Sources */,
+				0A4211EB27CAA877001AE014 /* Model.swift in Sources */,
 				0AF3C5A827B6FAF800EFE64E /* AdditionView.swift in Sources */,
+				0AF3C5AC27B6FD9F00EFE64E /* DivisionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
